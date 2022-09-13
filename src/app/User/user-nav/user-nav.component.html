@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+    <a class="navbar-brand text-white" routerLink="/home"><h4>Grocery Store</h4></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+        <input type="text" [(ngModel)]="term" placeholder="Search for Products">    
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto w-100 h5 justify-content-center">
+        <li class="nav-item active mr-5">
+          <a class="nav-link text-white" routerLink="/user/home">Home <span class="sr-only">(current)</span></a>
+        </li>
+        
+        <!-- <li class="nav-item dropdown pr-5">
+          <a class="nav-link text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Products
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Home care</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Personal care</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Health care</a>
+          </div>
+        </li> -->
+        <li class="nav-item active mr-5">
+            <a class="nav-link text-white" routerLink="">Contact us</a>
+          </li>
+          <li class="nav-item active mr-5">
+            <a class="nav-link text-white" routerLink="/user/profile">Profile</a>
+          </li>
+        <li >
+            <span class="badge badge-pill bg-danger">1</span>
+            <span><img style="height:36px ;width: 36px;" src="https://cdn-icons-png.flaticon.com/128/3501/3501047.png" (click)="open()"></span>
+        </li>
+      </ul>
+      <!-- <span class="material-icons">shopping_cart</span> -->
+       <!-- <div class="col-md-12 text-right">
+        <div class="cart_icon">
+          <i class="fa fa-shopping-cart" ></i>
+          <div class="cart_value">2</div>
+        </div>
+      </div>   -->
+      
+      
+      <!-- <button class="btn btn-outline-white my-2 my-sm-0" type="button"><i class="fa fa-cart-shopping"></i>Add to cart</button> -->
+      
+    </div>
+  </nav>

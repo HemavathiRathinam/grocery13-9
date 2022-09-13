@@ -1,0 +1,32 @@
+<app-admin-nav></app-admin-nav>
+
+  <div id="total" style="font-weight: bold;font-size:large;text-align: center;padding-top: 60px;">Total Users:&nbsp;&nbsp;{{ totalRows }}</div><br>
+
+  
+  <div id="main-container">
+    <table class="center">
+      <thead>
+          <tr>
+            <th>User ID</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>MobileNumber</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>State</th>
+          </tr>
+      </thead>
+      <tr *ngFor="let u of userdetails" >
+        <td>{{u.id}}</td>
+         <td>{{u.username}}</td>
+         <td>{{u.email}}</td>
+         <td>{{u.mobile}}</td>
+         <td>{{u.address}}</td>
+         <td>{{u.city}}</td>
+         <td>{{u.state}}</td>
+  
+     </tr> 
+    </table>
+  </div>
+ 
+  

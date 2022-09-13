@@ -1,0 +1,103 @@
+<app-user-nav></app-user-nav>
+
+<div class="container py-3">
+    <!-- For demo purpose -->
+    <div class="row mb-1">
+        <div class="col-lg-8 mx-auto text-center">
+            <h1 class="display-6">Payment Forms</h1>
+        </div>
+    </div> <!-- End -->
+    <div class="row">
+        <div class="col-lg-6 mx-auto">
+            <div class="card">
+                <div class="card-header">
+                    <div class="bg-Grayish bg-gradient  shadow-sm  pt-4 pl-2 pr-2 pb-2">
+                        <!-- Credit card form tabs -->
+                        
+                    <!-- Paypal info -->
+                    <div id="cash-on" class="pt-3">
+                        <form #paymentForm="ngForm">
+                    
+                            <div hidden class="form-outline">
+                                <label class="form-label" for="form11Example1">id</label>
+                              <input placeholder="Enter your name" type="text" ngModel name="id" id="form11Example1" class="form-control" />
+                          
+                            </div>
+                                <div class="form-outline">
+                                    <label class="form-label" for="form11Example1">Username</label>
+                                  <input placeholder="Enter your name" type="text" ngModel name="username" id="form11Example1" class="form-control" required/>
+                              
+                                </div>
+                            
+                        
+
+                              <!-- Email input -->
+                              <div class="form-outline mb-4">
+                                <label class="form-label" for="form11Example5">Email</label>
+                                <input readonly type="email" placeholder="Enter your email" [(ngModel)]="user.email" name="userEmail" id="form11Example5" class="form-control" />
+                                
+                              </div>
+                
+                              <!-- Number input -->
+                              <div class="form-outline mb-4">
+                                <label class="form-label" for="form11Example6">Phone</label>
+                                <input placeholder="Enter your phonenumber" type="tel" ngModel name="phoneNumber" id="form11Example6" class="form-control" />
+                                
+                              </div>
+                              <div class="form-outline mb-4">
+                                <label class="form-label" for="form11Example6">Address</label>
+                                <input type="text" placeholder="Enter your address" ngModel name="address" id="form11Example6" class="form-control" />
+                                
+                              </div>
+                              <div class="row mb-4">
+                                <div class="col">
+                              <div class="form-outline">
+                                <label class="form-label" for="form11Example6">City</label>
+                                <input type="text" placeholder="Your city" ngModel name="city" id="form11Example6" class="form-control" />
+                             </div>
+                             </div>
+                             <div class="col">
+                             <div class="form-outline">
+                                <label class="form-label" for="form11Example6">State</label>
+                                <input type="text" placeholder="Your state" ngModel name="state" id="form11Example6" class="form-control" />
+                             </div>
+                             </div>
+                             </div>
+                              <div class="form-outline mb-4">
+                                <label class="form-label" for="form11Example6">Pincode</label>
+                                <input type="number" placeholder="Enter your pincode" ngModel name="pincode" id="form11Example6" class="form-control" />
+                                
+                              </div>
+                              <div class="form-group "> <label for="Select Your Bank">
+                                <h6>Payment method</h6>
+                            </label> <select   ngModel name="paymentType" class="form-control" id="ccmonth">
+                                <option value="" selected disabled>--Please select your Payment type--</option>
+                                <option value="Cash on Delivery">Cash on Delivery</option>
+                                <option value="Online Payment">Online Payment</option>
+                            </select> </div>
+
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="form11Example6">Order amount</label>
+                                <input readonly type="number" placeholder="Enter your order total" [(ngModel)]="t" name="amount" id="form11Example6" class="form-control" />
+                              </div>
+                            <!-------date     -->
+                            
+                            <div class="form-outline mb-4">
+                              <label>Order Date</label>
+                                  <div class="form-label" for="form11Example6">
+                                    <input type="date" class="form-control" ngModel name="orderDate"/>
+                                  </div>
+                            </div>
+                            <!----end date  -->
+                              <div class="card-footer"> <button (click)="success(paymentForm)" type="submit" [disabled]="paymentForm.invalid" class="btn btn-primary btn-block shadow-sm"> Place Order</button>
+                              </div>
+                
+                        </form>
+
+                        
+                     </div> <!-- End -->
+
+                </div>
+            </div>
+        </div>
+    </div>

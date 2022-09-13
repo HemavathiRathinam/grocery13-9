@@ -1,0 +1,23 @@
+<app-admin-nav></app-admin-nav>
+
+<body class="bd">
+    <div class="form">
+        <form #addForm="ngForm" (ngSubmit)="onAddCategory(addForm)">
+            <h3>ADD NEW CATEGORY HERE<img src="https://t3.ftcdn.net/jpg/03/94/20/92/240_F_394209222_DXgjy9uxZkGrzPlGHBTQrxmYcLz0K3DO.jpg" style="width: 100px;height: 80px;"></h3><br>
+            <table style="margin-left: 50px;" >
+           
+            
+            <tr class="id1">
+                <td> Product Name:</td>  
+                <td><input type="text" ngModel name="categoryName" id="name" placeholder="Enter Category Name" required></td>
+            </tr><br>
+            <tr class="id1">
+                <td>Parent Category:</td>  
+                <td><input type="text" ngModel name="parentCategory" id="name" placeholder="Enter parent Category" required></td>
+            </tr>
+            </table><br><br>
+            <button  type="button" routerLink="/admin/category" class="btn" id="btn1" >Back</button>&nbsp;&nbsp;
+            <button  type="submit"  [disabled]="addForm.invalid" class="btn" id="btn" >Add</button>
+        </form>
+    </div>
+    </body>

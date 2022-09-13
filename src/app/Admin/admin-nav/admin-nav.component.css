@@ -1,0 +1,32 @@
+nav{
+    background-color: #3f4063;
+  }
+  .design
+  {
+  height: 800px;
+  background-size:100% ;
+  
+  }
+  #na{
+  height: 50px;
+  }
+  
+  #products{
+    font-weight: bold;
+  }
+  
+  .style
+  {
+  position: absolute;
+  right: 10px;
+  
+  }
+  #newproducts{
+    text-align:center;
+    margin-top: 25px;
+    margin-left: 45%;
+    background-color: #407a5a;
+    color:white;
+    font-weight: bold;
+  
+  }

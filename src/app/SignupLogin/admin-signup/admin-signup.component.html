@@ -1,0 +1,58 @@
+<section class="vh-100">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="card bg-secondary text-white shadow-2-strong " style="border-radius: 1rem;width: 23rem;height:39rem;">
+            <div class="card-body p-5 ">
+              <form [formGroup]= "adminSignupForm"  (ngSubmit)="postData()">
+                <h3 class="mb-2 text-dark  text-center">Admin</h3>
+                <h3 class="mb-2 text-dark  text-center">Create an account</h3>
+           
+            <div class="form-outline mb-3">
+                <label class="form-label" for="typeEmailX-2">Name</label>
+                <input placeholder="Your Name" formControlName="username" type="text" id="typeTextX-2" class="form-control" />
+                <small class="text-danger" *ngIf="(username?.touched || username?.dirty) && username?.invalid && username?.hasError('required')">Name is required</small>
+              </div>
+
+              <div class="form-outline mb-3" [class.has-error]="emailId?.invalid && emailId?.touched">
+                <label class="form-label" for="typeEmailX-2">Email</label>
+                <input placeholder="Your Email" formControlName="email" type="email" id="typeEmailX-2" class="form-control" />
+                <div *ngIf="emailId?.invalid && emailId?.touched" class="text-danger">
+                <small class="text-danger" *ngIf="emailId?.errors && emailId?.hasError('required')">Email is required</small>
+                <small class="text-danger" *ngIf="emailId?.hasError('pattern')">Enter valid email id</small>
+                </div>
+              </div>
+
+              <div class="form-outline mb-3">
+                <label class="form-label" for="typePasswordX-2">Mobile number</label>
+                <input placeholder="Your Number" formControlName="mobile" type="tel" id="typeTelX-2" class="form-control " />
+                <small class="text-danger" *ngIf="(mobile?.touched || mobile?.dirty) && mobile?.invalid && mobile?.hasError('required')">Mobile number is required</small>
+                <small class="text-danger" *ngIf="(mobile?.touched || mobile?.dirty) && mobile?.invalid && mobile?.hasError('pattern')">Enter valid mobile number</small>
+              </div>
+  
+              <div class="form-outline mb-3">
+                <label class="form-label" for="typePasswordX-2">Password</label>
+                <input placeholder="Your Password" formControlName="password" type="password" id="typePasswordX-2" class="form-control" />
+                <small class="text-danger" *ngIf="(password?.touched || password?.dirty) && password?.invalid && password?.hasError('required')">Password is required</small>
+                <small class="text-danger" *ngIf="(password?.touched || password?.dirty) && password?.invalid && password?.hasError('pattern')">Password should contain atleast 8 characters <br>
+                <ul><li>Uppercase letters,Lowercase letters</li>
+                  <li>Numbers,Special characters</li></ul>
+                </small>
+              </div>
+            
+        
+    
+              <button class="btn btn-success btn-block" type="submit" [disabled]="!adminSignupForm.valid">Register</button>
+    
+              <div>
+                <p class="mt-3">Already have an account? <a routerLink="/admin/login" class="text-white fw-bold"><u>login</u></a>
+                </p>
+              </div>
+            </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

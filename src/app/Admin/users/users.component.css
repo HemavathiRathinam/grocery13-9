@@ -1,0 +1,79 @@
+nav{
+    background-color: #3f4063;
+  }
+  .design
+  {
+  height: 800px;
+  background-size:100% ;
+  
+  }
+  #na{
+  height: 50px;
+  }
+  
+  #products{
+    font-weight: bold;
+  }
+  
+  .style
+  {
+  position: absolute;
+  right: 10px;
+  
+  }
+  #newproducts{
+    text-align:center;
+    margin-top: 25px;
+    margin-left: 45%;
+    background-color: #407a5a;
+    color:white;
+    font-weight: bold;
+  
+  }
+  
+  /* pavi */
+  table {
+      margin: 0 auto;
+      width: 91%;
+      border: none;
+    }
+   
+    .center {
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 30px;
+    }
+   
+    th {
+      background-color: #3f4063;
+      color: white;
+    }
+   
+    tr:nth-child(even) {
+      background-color: blanchedalmond;
+    }
+   
+    tr:nth-child(odd) {
+      background-color: lightyellow;
+    }
+   
+    td {
+      color: #587291;
+      font-weight: bold;
+    }
+   
+    td,
+    th {
+      width: 110px;
+    }
+   
+    table,
+    th,
+    td {
+      border: 1px solid #587291;
+      border-collapse: collapse;
+      padding: 20px;
+      padding-top: 3%;
+      margin-top: 4%;
+      text-align: center;
+    }

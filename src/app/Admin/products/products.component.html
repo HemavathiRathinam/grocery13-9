@@ -1,0 +1,84 @@
+<app-admin-nav></app-admin-nav>
+<button type="button" class="btn btn-secondary" routerLink="/admin/addproduct" id="newproducts"><img src="https://cdn-icons-png.flaticon.com/128/992/992651.png" height="25px" width="25px">&nbsp;Create New</button><br><br>
+<div id="total" style="font-weight: bold;font-size:large;text-align: center;">Total Products:&nbsp;&nbsp;{{ totalRows }}</div><br>
+<div id="search" style="text-align: center;">
+  Search:&nbsp;<input type="text" [(ngModel)]="term"placeholder="Search for Products">
+</div>
+
+<div id="main-container">
+  <table class="center">
+    <thead>
+        <tr>
+          <th>Product ID</th>
+          <th>Product Name</th>
+          <th>Price</th>
+          <th>Discount</th>
+          <th>Weight</th>
+          <th>Image</th>
+          <th>Category</th>
+          <th>Action</th>
+        </tr>
+    </thead>
+    <tr *ngFor="let p of productdetails|filter:term" >
+      <td>{{p.prodId}}</td>
+       <td>{{p.prodName}}</td>
+       <td>{{p.prodPrice}}</td>
+       <td>{{p.prodDiscount}}%</td>
+       <td>{{p.prodWeight}}</td>
+       <td><img src={{p?.prodImg}} height="100px" width="100px"></td>
+       <td>{{p.prodCategory}}</td>
+        <td><img src="https://cdn-icons-png.flaticon.com/128/1827/1827933.png" (click)="openPopup(p)" style="width: 25px;">&nbsp;&nbsp;&nbsp;
+         <img src="https://cdn-icons-png.flaticon.com/128/2874/2874821.png" (click)="delete(p)" style="width: 25px;">
+       </td>   
+   </tr> 
+  </table>
+</div>
+<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}"
+id="exampleModal"  aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel" style="color:rgb(116, 13, 156);font-weight: bold;">UPDATE PRODUCT</h5>
+      <img src="https://t3.ftcdn.net/jpg/04/37/51/90/240_F_437519066_OLrSfrnBk5hioGeje96IZ0ejr8Xrozw3.jpg" (click)="close()" style="width: 20px;">
+    </div>
+    <div class="modal-body">
+        <div class="container">
+            <form #updateForm="ngForm" (ngSubmit)="register()"  >
+              
+                
+                <div class="page">
+                  Product Name:  <input type="text" [(ngModel)]="productsupdate.prodName" name="prodName" id="name" placeholder="Enter Product Name"><br><br>
+                </div>
+               
+                <div class="page">
+                  Price: <input type="number" [(ngModel)]="productsupdate.prodPrice" name="prodPrice" id="price" placeholder="Enter Product Price" /><br><br>
+                </div>
+                <div class="page">
+                  Discount: <input type="number" [(ngModel)]="productsupdate.prodDiscount" name="prodDiscount" id="discount" placeholder="Enter Product Discount"><br><br>
+                </div>
+                <div class="page">
+                  Weight: <input type="text" [(ngModel)]="productsupdate.prodWeight" name="prodWeight" id="weight" placeholder="Enter Product Weight"><br><br>
+                </div>
+                <div class="page">
+                  Image:  <input type="text" id="image" [(ngModel)]="productsupdate.prodImg" name="prodImg" ><br><br>
+                </div>
+                <div class="page">
+                  Category: <select [(ngModel)]="productsupdate.prodCategory" name="prodCategory" placeholder="select category" id="cars">
+                    <option value="Cereal">Cereal</option>
+                    <option value="Pluses">Pluses</option>
+                    <option value="oil and rice">oil and rice</option>
+                    <option value="masala and spices">masala and spices</option>
+                    <option value="vegetable">vegetable</option>
+                    <option value="Home care">Home care</option>
+                    <option value="personal care">personal care</option>
+                  </select><br><br>
+                </div>
+                <div >
+                    <button type="submit" class="btn btn-primary"  class="btn btn-primary" id="addOnButton" (click)="close()" style="margin-left: 140px; background-color: rgb(95, 13, 172);">Update Product</button>
+                </div>
+            </form>   
+        <div>    
+    </div>  
+    </div>
+    </div>
+    </div>

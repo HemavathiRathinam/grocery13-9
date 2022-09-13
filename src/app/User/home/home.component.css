@@ -1,0 +1,39 @@
+
+
+/* cards */
+.row{
+    padding-left: 50px;
+    padding-top: 20px;
+}
+.card{
+    padding: 5px;
+    
+
+}
+.cart_icon{
+    position: relative;
+    
+}
+.cart_icon i{
+    font-size: 20px;
+    color: white;
+}
+.cart_value{
+    position: absolute;
+    top: -16px;
+    right: -32px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    padding: 4px 10px;
+    font-weight: 800;
+    font-size: 16px;
+}
+.card-img-top {
+    width: 100%;
+    height: 15vw;
+    object-fit:cover;
+}
+.space{
+    padding-left: 20px;
+}

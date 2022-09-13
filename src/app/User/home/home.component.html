@@ -1,0 +1,20 @@
+
+
+ <app-user-nav></app-user-nav>
+        <div class="row">
+        <!-- <div class=" space"></div> -->
+            <div class="card " style="width: 18rem;height: 30rem;"*ngFor="let p of productdetails|filter:term" >
+                        <img src={{p?.prodImg}} height="80px" width="100px" class="card-img-top img-responsive img-fluid" alt="">
+                                <h4>{{p.prodName}}</h4>
+                                <p class="item-price"><span>Product Price: {{p.prodPrice}}</span></p>
+                                <p class="item-price"><span>Product Discount: {{p.prodDiscount}}%</span></p>
+                                <p class="item-price"><span>Product Quantity: {{p.prodWeight}}</span></p>
+                                <p class="item-price"><span>Product Categoey: {{p.prodCategory}}</span></p>
+                                
+                                <a  class="btn btn-primary" (click)="openPopup(p)">Add to Cart</a>
+                    </div>	
+                			
+  </div>
+
+
+                

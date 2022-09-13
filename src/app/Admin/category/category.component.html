@@ -1,0 +1,54 @@
+<app-admin-nav></app-admin-nav>
+<button type="button" class="btn btn-secondary" routerLink="/admin/addcategory" id="newcategory"><img src="https://cdn-icons-png.flaticon.com/128/992/992651.png" height="25px" width="25px">&nbsp;Create New</button><br><br>
+<div id="search" style="text-align: center;">
+  Search:&nbsp;<input type="text" [(ngModel)]="term">
+</div>
+<div id="total" style="font-weight: bold;font-size:large;text-align: center;">Total Category:&nbsp;&nbsp;{{ totalRows }}</div>
+<div class="container">
+    <table class="table table-striped">
+      <thead>
+          <tr>
+            <th>Category Id</th>
+            <th>Product Name</th>
+            <th>Parent Category</th>
+            <th>Action</th>
+          </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let pl of categorydetails|filter:term">
+          <td>{{pl.categoryId}}</td>
+          <td>{{pl.categoryName}}</td>
+          <td>{{pl.parentCategory}}</td>
+          <td> <img src="https://cdn-icons-png.flaticon.com/128/1827/1827933.png" (click)="openPopup(pl)" style="width: 25px;">
+         <img src="https://cdn-icons-png.flaticon.com/128/1345/1345874.png" (click)="delete(pl)" style="width: 25px;"></td>
+        </tr>
+      </tbody>
+    </table>
+</div>
+<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}"
+    id="exampleModal"  aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel" style="color:rgb(116, 13, 156);font-weight: bold;">UPDATE Category</h5>
+          <img src="https://t3.ftcdn.net/jpg/04/37/51/90/240_F_437519066_OLrSfrnBk5hioGeje96IZ0ejr8Xrozw3.jpg" (click)="close()" style="width: 20px;">
+        </div>
+        <div class="modal-body">
+            <div class="container">
+                <form #updateForm="ngForm" (ngSubmit)="register()"  >
+                  
+                    <div class="page">
+                        Product Name:<input type="text"  [(ngModel)]="categoryupdate.categoryName" name="categoryName"  placeholder="Enter Category Name" required><br><br><br><br>
+                      </div>
+                    <div class="page">
+                      Parent Category: <input type="text"  [(ngModel)]="categoryupdate.parentCategory" name="parentCategory"  placeholder="Enter Parent Category" required><br><br>
+                    </div>
+                    <div >
+                        <button type="submit" class="btn btn-primary"  class="btn btn-primary" id="addCategory" (click)="close()" style="margin-left: 140px; background-color: rgb(95, 13, 172);">Update category</button>
+                    </div>
+                </form>   
+            <div>    
+        </div>  
+      </div>
+    </div>
+  </div>

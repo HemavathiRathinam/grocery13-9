@@ -1,0 +1,46 @@
+<app-admin-nav></app-admin-nav>
+<body class="bd">
+<div class="form">
+    <form #addForm="ngForm" (ngSubmit)="onAddProduct(addForm)">
+        <h3>ADD NEW PRODUCT HERE<img src="https://t3.ftcdn.net/jpg/03/94/20/92/240_F_394209222_DXgjy9uxZkGrzPlGHBTQrxmYcLz0K3DO.jpg" style="width: 100px;height: 80px;"></h3><br>
+        <table style="margin-left: 50px;" >
+        <tr class="id1">
+            <td>Name:</td>  
+            <td><input type="text" ngModel name="prodName" id="name" placeholder="Enter Product Name" required></td>
+        </tr>
+        <tr class="id1" >
+        <td >Price:</td>
+        <td><input type="number" ngModel name="prodPrice" id="price" placeholder="Enter Product Price" required></td>
+        </tr>
+        <tr class="id1">
+        <td> Discount:</td>  
+        <td><input type="number" ngModel name="prodDiscount" id="discount" placeholder="Enter Product Discount" required></td>
+        </tr> 
+        <tr class="id1">
+            <td> Weight:</td>  
+            <td><input type="text" ngModel name="prodWeight" id="weight" placeholder="Enter Product Weight" required></td>
+        </tr>
+        <tr class="id1">
+            <td> select Image file:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td> <input type="text" ngModel name="prodImg" id="image" placeholder="Enter Product URL" required></td>
+            
+        </tr>
+        <tr class="id1">
+            <td> Category:</td>  
+            <td><select required ngModel="Select Category" name="prodCategory"  placeholder="Select Category"  >
+                <option value="select category">Select Category</option>
+                <option value="Cereal">Cereal</option>
+                <option value="Pluses">Pluses</option>
+                <option value="oil and rice">oil and rice</option>
+                <option value="masala and spices">masala and spices</option>
+                <option value="vegetable">vegetable</option>
+                <option value="Home care">Home care</option>
+                <option value="personal care">personal care</option>
+              </select></td>
+        </tr>
+        </table><br><br>
+        <button  type="submit" [disabled]="addForm.invalid" class="btn" id="btn" >Add</button>
+    </form>
+</div>
+</body>
+

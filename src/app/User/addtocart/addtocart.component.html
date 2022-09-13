@@ -1,0 +1,58 @@
+
+<div >
+  <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}"
+id="exampleModal"  aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel" style="color:rgb(116, 13, 156);font-weight: bold;">ADD TO CART</h5>
+      <img src="https://t3.ftcdn.net/jpg/04/37/51/90/240_F_437519066_OLrSfrnBk5hioGeje96IZ0ejr8Xrozw3.jpg" (click)="close()" style="width: 20px;">
+    </div>
+    <div class="modal-body">
+        <div class="container">
+            <form #addForm="ngForm"  (ngSubmit)="onAddProducttocart(addForm)" >
+              
+                
+                <div class="page">
+                  Product Name:  <input type="text" class="form-control" [(ngModel)]="pro.prodName" name="prodName" id="name" placeholder="Enter Product Name">
+                </div>
+               
+                <div class="page">
+                  Price: <input type="number" class="form-control"[(ngModel)]="pro.prodPrice" name="prodPrice" id="price" placeholder="Enter Product Price" />
+                </div>
+                
+                <div class="page">
+                  Weight: <input type="text" class="form-control" [(ngModel)]="pro.prodWeight" name="prodWeight" id="weight" placeholder="Enter Product Weight">
+                </div>
+                <div class="page">
+                  Image: <img  src="{{pro?.prodImg}}"  height="100px" width="100px" ><br><br>
+                  <input type="hidden" class="form-control" [(ngModel)]="pro.prodImg" name="prodImg" id="image" placeholder="Enter Product Weight">
+                </div>
+                <div class="qty mt-4">
+                  
+                  Product Quantity: <span class="minus bg-dark" (click)="onDecrement(cartdetails)">-</span><span class="plus bg-dark" (click)="onIncrement(cartdetails)">+</span><input class="form-control" type="number"  name="prodquantity" #qua (keyup)="0" [value]="1" ngModel>
+                  
+                </div>
+            
+                <div class="page">
+                  Subtotal:  <input type="number" class="form-control" id="subtotal"  name="subtotal" [(ngModel)]="+qua.value * +pro.prodPrice" >{{+qua.value*+pro.prodPrice| currency: 'INR'}}
+                </div>
+                <div>
+                  <input  type="hidden" class="form-control" [(ngModel)]="this.name" name="username" id="image" placeholder="Enter Product Weight">
+                </div>
+                <div>
+                  <input  type="hidden"   class="form-control" [(ngModel)]="this.id" name="id" id="image" placeholder="Enter Product Weight">
+                </div>
+                <div >
+                    <button type="submit" class="btn btn-primary"  class="btn btn-primary" id="addOnButton"  style="margin-left: 140px; background-color: rgb(95, 13, 172);">Check out</button>
+                </div>
+            </form>   
+        <div>    
+    </div>  
+    </div>
+    </div>
+    </div>
+
+</div>
+  
+

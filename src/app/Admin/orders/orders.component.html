@@ -1,0 +1,33 @@
+<app-admin-nav></app-admin-nav>
+
+  <div id="total" style="font-weight: bold;font-size:large;text-align: center;padding-top: 60px;">Total Orders:&nbsp;&nbsp;{{ totalRows }}</div><br>
+
+  
+  <div id="main-container">
+    <table class="center">
+      <thead>
+          <tr>
+            <th>Order ID</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Order Date</th>
+            <th>Total amount</th>
+            <th>Order items</th>
+          </tr>
+      </thead>
+      <tr *ngFor="let u of orderdetails" >
+        <td>{{u.id}}</td>
+         <td>{{u.username}}</td>
+         <td>{{u.userEmail}}</td>
+         <td>{{u.orderDate}}</td>
+         <td>Rs.{{u.amount}}</td>
+         <td> <button class="btn btn-outline-info my-2 my-sm-0" type="button">Display Products</button>
+         </td>
+         
+         
+  
+     </tr> 
+    </table>
+  </div>
+ 
+  
